@@ -74,12 +74,12 @@ describe film;
  -- -------------------------------------------------------------------------------------
  -- List different countries
  
- select * from country;
+ select distinct(country) from country;
  
  -- ----------------------------------------------------------------------
  -- Display all active customers
  
- select active from customer;
+ select first_name,last_name from customer where active = 1;
  
  -- -------------------------------------------------------------------------
  -- List of all rental IDs for customer with ID 1
@@ -96,7 +96,7 @@ describe film;
  -- ---------------------------------------------------------------------------------------
  -- List the total number of films whose replacement cost is greater than $15 and less than $20
  
- select title, replacement_cost from film where replacement_cost > 15 and replacement_cost < 20;
+ select count(title) from film where replacement_cost > 15 and replacement_cost < 20;
  
  -- ------------------------------------------------------------------------------------------------------------------------------------
  -- Find the number of films whose rental rate is less than $1
